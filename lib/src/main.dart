@@ -2,6 +2,7 @@ import 'package:codify/src/service/shop_provider.dart';
 import 'package:codify/src/view/home_screen.dart';
 import 'package:codify/src/view/shop_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -16,6 +17,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    WidgetsFlutterBinding.ensureInitialized();
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
     return ChangeNotifierProvider(
         create: (context) => ShopProvider(),
         child: MaterialApp.router(
@@ -24,7 +30,6 @@ class MyApp extends StatelessWidget {
           title: 'Codify',
           theme: ThemeData(
               textTheme: GoogleFonts.madaTextTheme(
-                
                 Theme.of(context).textTheme,
               ),
               primarySwatch: Colors
