@@ -23,47 +23,46 @@ class MyApp extends StatelessWidget {
       DeviceOrientation.portraitDown,
     ]);
     return ChangeNotifierProvider(
-        create: (context) => ShopProvider(),
-        child: MaterialApp.router(
-          routerConfig: _router,
-          debugShowCheckedModeBanner: false,
-          title: 'Codify',
-          theme: ThemeData(
-              textTheme: GoogleFonts.madaTextTheme(
-                Theme.of(context).textTheme,
-              ),
-              primarySwatch: Colors
-                  .blue, // You can choose any primary color, it will be overridden by the color scheme
-              hintColor: Colors
-                  .orangeAccent, // You can choose any accent color, it will be overridden by the color scheme
-              colorScheme: const ColorScheme(
-                primary: Color(
-                    0xFF007EC8), // You can choose any color for primary variant
-                secondary: Color(
-                    0xFFFF8951), // You can choose any color for secondary variant
-                surface: Colors.white, // You can choose any color for surface
-                background:
-                    Colors.white, // You can choose any color for background
-                error: Colors.red, // You can choose any color for error
-                onPrimary:
-                    Colors.white, // You can choose any color for onPrimary
-                onSecondary:
-                    Colors.white, // You can choose any color for onSecondary
-                onSurface:
-                    Colors.black, // You can choose any color for onSurface
-                onBackground:
-                    Colors.black, // You can choose any color for onBackground
-                onError: Colors.white, // You can choose any color for onError
-                brightness: Brightness.light,
-              )),
-        ));
+      create: (context) => ShopProvider(),
+      child: MaterialApp.router(
+        routerConfig: _router,
+        debugShowCheckedModeBanner: false,
+        title: 'Codify',
+        theme: ThemeData(
+          textTheme: GoogleFonts.madaTextTheme(
+            Theme.of(context).textTheme,
+          ),
+          primarySwatch: Colors
+              .blue, // You can choose any primary color, it will be overridden by the color scheme
+          hintColor: Colors
+              .orangeAccent, // You can choose any accent color, it will be overridden by the color scheme
+          colorScheme: const ColorScheme(
+            primary: Color(
+                0xFF007EC8), // You can choose any color for primary variant
+            secondary: Color(
+                0xFFFF8951), // You can choose any color for secondary variant
+            surface: Colors.white, // You can choose any color for surface
+            background: Colors.white, // You can choose any color for background
+            error: Colors.red, // You can choose any color for error
+            onPrimary: Colors.white, // You can choose any color for onPrimary
+            onSecondary:
+                Colors.white, // You can choose any color for onSecondary
+            onSurface: Colors.black, // You can choose any color for onSurface
+            onBackground:
+                Colors.black, // You can choose any color for onBackground
+            onError: Colors.white, // You can choose any color for onError
+            brightness: Brightness.light,
+          ),
+        ),
+      ),
+    );
   }
 
   final GoRouter _router = GoRouter(
     routes: [
       GoRoute(
         path: "/",
-        builder: (context, state) => const MyHomePage(),
+        builder: (context, state) => MyHomePage(),
       ),
       GoRoute(
         path: "/shop",

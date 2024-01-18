@@ -282,10 +282,18 @@ class ShopContent extends StatelessWidget {
                       ),
                       child: GoogleMap(
                         onMapCreated: _onMapCreated,
+                        mapType: MapType.normal,
                         initialCameraPosition: CameraPosition(
                           target: _center,
                           zoom: 15.0,
                         ),
+                        markers: {
+                          const Marker(
+                            markerId: MarkerId('demo'),
+                            position:
+                                LatLng(35.55771617311098, 45.42851667365644),
+                          )
+                        },
                       ),
                     )
                   ],
